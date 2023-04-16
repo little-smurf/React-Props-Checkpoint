@@ -2,17 +2,17 @@
 Instructions
 Use PropsType to check props.  
 */
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
+import Image from '../ouma.jpg'
 // Component that receives parameters(props)
 const FullName = (props) => {
-  return <h1>The fullname is : {props.name}</h1>;
+  return <h3>My name is {props.name}</h3>;
   }
 const Bio = (props) => {
-  return <h1>The bio consists of : {props.bio}</h1>;
+  return <h4>My bio : {props.bio}</h4>;
 }
 const Profession = (props) => {
-  return <h1>The profession is : {props.profession}</h1>;
+  return <h4>The profession is : {props.profession}</h4>;
 }
 Profile.defaultProps={
   name:"Foulen Fouleni",
@@ -33,20 +33,23 @@ function Profile() {
 return (
     <div className="Profile">
     <header className="App-header">
-      <div style={{color:"blue", backgroundColor:"black", textAlign:"center"}}>
-      <FullName name="world" />
+      <div style={{backgroundColor:"#91BAD6", paddingRight: 2, paddingLeft: 2}}>
+      <div style={{color:"#1E3F66", textAlign:"center"}}>
+      <FullName name="Oumayma Selmi" />
       </div>
       <div style={{position:"center"}}>
-      <img src="#" alt="profile pic" width="600" height="400"/>
+      <img src={Image} alt="profile pic" width="400" height="400"/>
       </div>
-      <Bio bio="world" />
-      <Profession profession="world" />  
+      <div style={{color:"#2E5984"}}>
+      <Bio bio="Hello world! I'm learning props!" />
+      <Profession profession="Student" />  
+      </div>
+      </div> 
       <div>
       <HandleName name="Oumayma" alertMyInput={alertMyInput} />
-      </div>      
+      </div>     
       </header>
     </div>
   );
 }
-
 export default Profile;
